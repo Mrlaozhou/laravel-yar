@@ -1,0 +1,22 @@
+{
+    "name": "mrlaozhou/laravel-yar",
+    "description": "Laravel-Yar 基于PHP yar实现了Laravel完全兼容Route模式的RPC",
+    "homepage": "https://github.com/Mrlaozhou/laravel-yar.git",
+    "keywords": ["yar", "rpc", "laravel", "mrlaozhou"],
+    "authors": [
+        {
+            "name": "Mrlaozhou",
+            "email": "zgsself@163.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Mrlaozhou\\Yar\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
