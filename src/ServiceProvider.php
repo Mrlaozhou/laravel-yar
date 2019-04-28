@@ -2,11 +2,10 @@
 namespace Mrlaozhou\Yar;
 
 use Illuminate\Support\Facades\Route;
-use \Illuminate\Support\ServiceProvider;
-use Mrlaozhou\Yar\Exceptions\ExtensionNotLoadedException;
 use Mrlaozhou\Yar\Middleware\RouteAsYarMiddleware;
+use Mrlaozhou\Extend\ServiceProvider as ExtendServiceProvider;
 
-class LaravelServiceProvider extends ServiceProvider
+class ServiceProvider extends ExtendServiceProvider
 {
     /**
      * 路由命名空间路径
@@ -15,17 +14,16 @@ class LaravelServiceProvider extends ServiceProvider
      */
     protected $namespace = 'App\Http\Controllers';
 
+
     public function boot(){}
 
     /**
-     * @throws \Mrlaozhou\Yar\Exceptions\ExtensionNotLoadedException
+     * @throws \throwable
      */
     public function register()
     {
         //  检测是否安装Yaconf扩展
-        if( ! extension_loaded('yar') ) {
-            throw new ExtensionNotLoadedException('yar');
-        }
+        $this->is_extension_loaded('yar');
         //  注册路由组
         $this->registerRouteGroup();
     }

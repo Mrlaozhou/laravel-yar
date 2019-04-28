@@ -18,5 +18,13 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mrlaozhou\\Yar\\ServiceProvider"
+            ],
+            "aliases": {}
+        }
     }
 }
